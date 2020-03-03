@@ -48,7 +48,8 @@ def test_rmgr_rp_resource_request():
   # os.environ['RP_ENABLE_OLD_DEFINES'] = 'True'
 
     config  = {'sandbox_cleanup': False, 'db_cleanup': False}
-    rmgr_id = ru.generate_id('test.%(item_counter)04d', ru.ID_CUSTOM)
+    sid = ru.generate_id('re.session', ru.ID_PRIVATE) 
+    rmgr_id = ru.generate_id('test.%(item_counter)04d', ru.ID_CUSTOM, ns=sid)
     rmgr    = RPRmgr(res_dict, sid=rmgr_id, rts_config=config)
 
     rmgr._validate_resource_desc()

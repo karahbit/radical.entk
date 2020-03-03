@@ -212,6 +212,7 @@ def test_task_to_dict():
                  'state'                : states.INITIAL,
                  'state_history'        : [states.INITIAL],
                  'pre_exec'             : [],
+                 'sandbox'              : None,
                  'executable'           : None,
                  'arguments'            : [],
                  'post_exec'            : [],
@@ -227,6 +228,7 @@ def test_task_to_dict():
                  'upload_input_data'    : [],
                  'copy_input_data'      : [],
                  'link_input_data'      : [],
+                 'link_output_data'     : [],
                  'move_input_data'      : [],
                  'copy_output_data'     : [],
                  'move_output_data'     : [],
@@ -254,6 +256,7 @@ def test_task_to_dict():
     t.upload_input_data               = ['test1']
     t.copy_input_data                 = ['test2']
     t.link_input_data                 = ['test3']
+    t.link_output_data                = ['test3.1']
     t.move_input_data                 = ['test4']
     t.copy_output_data                = ['test5']
     t.move_output_data                = ['test6']
@@ -276,6 +279,7 @@ def test_task_to_dict():
                  'executable'           : 'sleep',
                  'arguments'            : ['10'],
                  'post_exec'            : [],
+                 'sandbox'              : None,
                  'cpu_reqs'             : {'processes'           : 10,
                                            'process_type'        : None,
                                            'threads_per_process' : 2,
@@ -288,6 +292,7 @@ def test_task_to_dict():
                  'upload_input_data'    : ['test1'],
                  'copy_input_data'      : ['test2'],
                  'link_input_data'      : ['test3'],
+                 'link_output_data'     : ['test3.1'],
                  'move_input_data'      : ['test4'],
                  'copy_output_data'     : ['test5'],
                  'move_output_data'     : ['test6'],
@@ -310,6 +315,7 @@ def test_task_to_dict():
                  'state_history'        : [states.INITIAL],
                  'pre_exec'             : ['module load abc'],
                  'executable'           : 'sleep',
+                 'sandbox'              : None,
                  'arguments'            : ['10'],
                  'post_exec'            : [],
                  'cpu_reqs'             : {'processes'           : 10,
@@ -324,6 +330,7 @@ def test_task_to_dict():
                  'upload_input_data'    : ['test1'],
                  'copy_input_data'      : ['test2'],
                  'link_input_data'      : ['test3'],
+                 'link_output_data'     : ['test3.1'],
                  'move_input_data'      : ['test4'],
                  'copy_output_data'     : ['test5'],
                  'move_output_data'     : ['test6'],
